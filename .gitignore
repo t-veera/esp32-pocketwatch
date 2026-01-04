@@ -1,0 +1,40 @@
+ld outputs
+build/
+*.bin
+*.elf
+*.map
+
+# ESP-IDF generated files
+sdkconfig
+sdkconfig.old
+dependencies.lock
+
+# Managed components (auto-downloaded from component registry)
+managed_components/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Logs
+*.log
+
+# Backup files
+*.backup
+*.bak
+*.orig
+
+# Component manager
+dependencies/
+.component_hash
