@@ -23,7 +23,7 @@ public:
 
 protected:
     SquarelineDemo(bool use_status_bar, bool use_navigation_bar);
-    
+
     bool run(void) override;
     bool back(void) override;
 
@@ -32,13 +32,15 @@ private:
     SensorPCF85063 rtc;
     lv_timer_t *clock_update_timer;
     bool rtc_initialized;
+    gpio_num_t button_gpio;
+    bool display_sleeping;
+    uint32_t last_touch_time;
+    bool screen_sleeping;
     
     static void update_clock_callback(lv_timer_t *timer);
     void updateClockHands();
+    void checkScreenTimeout();
     static void IRAM_ATTR button_isr_handler(void* arg);
-    static void button_task(void* arg);
-    gpio_num_t button_gpio;
-    bool display_sleeping;
 };
 
 } // namespace esp_brookesia::apps
